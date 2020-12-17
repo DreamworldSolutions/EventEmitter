@@ -1,0 +1,42 @@
+{
+  "name": "@dreamworld/event-emitter",
+  "version": "0.0.0-development",
+  "description": "It's library by using we can bind event on any class instance",
+  "main": "event-emitter.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DreamworldSolutions/EventEmitter.git"
+  },
+  "keywords": [
+    "Event-Emitter",
+    "event"
+  ],
+  "author": "Dhruval Kodinariya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DreamworldSolutions/EventEmitter/issues"
+  },
+  "homepage": "https://github.com/DreamworldSolutions/EventEmitter#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "semantic-release": "17.0.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "master",
+      {
+        "name": "feature/*",
+        "prerelease": "${name.replace(/^feature\\//g,\"\")}",
+        "channel": "${name.replace(/^feature\\//g,\"\")}"
+      }
+    ]
+  }
+}
