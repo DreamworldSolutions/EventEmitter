@@ -1,8 +1,8 @@
-version: 2
+version: 2.1
 jobs:
   release-snapshot:
     docker:
-      - image: circleci/node:lts
+      - image: cimg/node:lts
     steps:
       - checkout
       - run: yarn install --production=true --flat --non-ineractive
@@ -15,7 +15,7 @@ jobs:
             npx semantic-release
   release:
     docker:
-      - image: circleci/node:lts
+      - image: cimg/node:lts
     steps:
       - checkout
       - run: yarn install --production=true --flat --non-ineractive
@@ -27,7 +27,6 @@ jobs:
 
 
 workflows:
-  version: 2
   release:
     jobs:
       - release-snapshot:
